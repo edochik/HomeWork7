@@ -1,8 +1,10 @@
 ﻿
+/*
 3. Сформировать трехмерный массив не повторяющимися двузначными числами показать его построчно на экран выводя индексы 
 соответствующего элемента
 */
-
+//1. Создать трехмерный массив.
+//2. Сделать неповторяющиеся значения в массиве. 
 int[,,] NewMatrix(int[,,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -11,7 +13,7 @@ int[,,] NewMatrix(int[,,] matrix)
         {
             for (int z = 0; z < matrix.GetLength(2); z++)
             {
-                matrix[i, j, z] = new Random().Next(0, 9);
+                matrix[i, j, z] = new Random().Next(10, 100);
             }
 
         }
@@ -23,6 +25,7 @@ void PrintMatrix(int[,,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
+        Console.WriteLine("page №: " + (i + 1));
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             for (int z = 0; z < matrix.GetLength(2); z++)
@@ -31,11 +34,11 @@ void PrintMatrix(int[,,] matrix)
             }
             Console.WriteLine();
         }
-        Console.WriteLine();
+        Console.WriteLine("=====================");
     }
 }
 
-int[,,] matrix = new int[5, 5, 5];
+int[,,] matrix = new int[3, 3, 3];
 NewMatrix(matrix);
 PrintMatrix(matrix);
 
