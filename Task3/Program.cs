@@ -38,6 +38,33 @@ void PrintMatrix(int[,,] matrix)
     }
 }
 
+Random rnd = new Random();
+int[] a = new int[100];
+a[0] = rnd.Next(0, 101);
+for (int i = 1; i < 100;)
+{
+    int num = rnd.Next(0, 101); // генерируем элемент
+    int j;
+    // поиск совпадения среди заполненных элементов
+    for (j = 0; j < i; j++)
+    {
+        if (num == a[j])
+            break; // совпадение найдено, элемент не подходит
+    }
+    if (j == i)
+    { // совпадение не найдено
+        a[i] = num; // сохраняем элемент
+        i++; // переходим к следующему элементу
+    }
+}
+for (int i = 0; i < 100; i++)
+{
+    Console.Write("{0,4} ", a[i]);
+    if (i % 10 == 9)
+        Console.WriteLine();
+}
+
+
 int[,,] matrix = new int[3, 3, 3];
 NewMatrix(matrix);
 PrintMatrix(matrix);
