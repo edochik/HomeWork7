@@ -28,7 +28,7 @@ void SpiralMatrix(int[,] matrix)
         {
             matrix[i, j] = number++;
         }
-        for (int j = i + 1; j < n - i; j++) //заполняется правая строка
+        for (int j = i + 1; j < n - i; j++) //заполняется правый столбец
         {
             matrix[j, n - 1 - i] = number++;
         }
