@@ -49,7 +49,7 @@ void PrintMatrix(int[,] matrix)// печать массива
 
 void Remove(int[,] array, int row, int column) // должен удалять строчку и столбец
 {
-    int[,] newArray = new int[array.GetLength(0) - 1, array.GetLength(1) - 1];
+    int[,] newArray = new int[array.GetLength(0) - 1, array.GetLength(1) - 1];// создаем новый массив меньше на 1 строчку и 1 колонку
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < column; j++)
@@ -62,20 +62,21 @@ void Remove(int[,] array, int row, int column) // должен удалять с
         for (int j = column + 1; j < array.GetLength(1); j++)
         {
             newArray[i - 1, j - 1] = array[i, j];
-
         }
     }
     array = newArray;
 }
 
-int[,] array = new int[3, 3];
+int[,] array = new int[4, 4];
 NewMatrix(array);
 PrintMatrix(array);
 Console.WriteLine(FindSmallIndex(array));
 Console.WriteLine();
-Remove(array, 2, 2);
+Remove(array, 3, 3);
 PrintMatrix(array);
 
-//Console.Write(FindSmallIndex(array));
-
 /*
+Вячеслав, добрый вечер. Спасибо за обратную связь. 
+1. ДЗ по спирали, пытался сделать сам, но все равно не до конца понимаю. Но смог сделал благодаря уроку на youtube.
+2. ДЗ 
+*/

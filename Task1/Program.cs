@@ -45,7 +45,7 @@ void SpiralMatrix(int[,] matrix)
 
 }
 
-int[,] NewMatrix = new int[8, 8];
+int[,] NewMatrix = new int[4, 4];
 Console.WriteLine();
 SpiralMatrix(NewMatrix);
 PrintMatrix(NewMatrix);
